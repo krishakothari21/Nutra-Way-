@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="style.css">
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Nutra Way — Nutrition that works.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <style>
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%; width:100%; }
+    body{
+      font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      color:#163a2e;
+      background: linear-gradient(135deg,#fffde7 0%, #f6ffec 30%, #e9fff0 100%);
+      overflow-x:hidden;
+      position:relative;
+    }
+    .bg-blob{position:fixed;inset:0;pointer-events:none;z-index:-1;overflow:hidden}
+    .blob{
+      position:absolute;filter:blur(40px);opacity:0.55;mix-blend-mode:multiply;
+      transform-origin:center;will-change:transform;
+    }
+    .blob.b1{width:520px;height:520px;background:radial-gradient(circle at 30% 30%, #ffef6b, #ffd34a 40%, #ffd34a00 70%);top:-120px;left:-80px;animation:float1 12s ease-in-out infinite}
+    .blob.b2{width:480px;height:480px;background:radial-gradient(circle at 20% 20%, #c6ff9c, #63e28d 40%, #63e28d00 70%);bottom:-140px;right:-100px;animation:float2 14s ease-in-out infinite}
+    .blob.b3{width:360px;height:360px;background:radial-gradient(circle at 60% 40%, #fff0b6, #baf7c3 35%, #baf7c300 70%);top:20%;right:30%;animation:float3 16s ease-in-out infinite}
+
+    @keyframes float1{0%{transform:translateY(0) rotate(0deg) scale(1)}50%{transform:translateY(40px) rotate(8deg) scale(1.05)}100%{transform:translateY(0) rotate(0deg) scale(1)}}
+    @keyframes float2{0%{transform:translateY(0) rotate(0deg) scale(1)}50%{transform:translateY(-50px) rotate(-6deg) scale(1.06)}100%{transform:translateY(0) rotate(0deg) scale(1)}}
+    @keyframes float3{0%{transform:translateX(0) rotate(0deg) scale(1)}50%{transform:translateX(30px) rotate(5deg) scale(1.03)}100%{transform:translateX(0) rotate(0deg) scale(1)}}
+
+    .wrap{max-width:1500px;margin:48px auto;padding:28px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .brand{display:flex;align-items:center;gap:14px}
+    .logo{width:64px;height:64px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(135deg,#ffd34a,#63e28d);box-shadow:0 6px 18px rgba(16,40,24,0.12);font-weight:800;color:#163a2e;font-family:"Playfair Display",serif}
+    .brand h1{font-size:20px;letter-spacing:0.2px}
+    .slogan{font-size:13px;color:#2a6b4a;opacity:.9}
+
+    nav ul{display:flex;gap:14px;align-items:center;list-style:none}
+    nav a{display:inline-block;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:600;color:#164a31}
+    nav a.btn{background:linear-gradient(90deg,#fffad4,#eafbe9);box-shadow:inset 0 -2px 0 rgba(0,0,0,0.03)}
+
+   
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:32px;align-items:center;margin-top:28px}
+    .hero-left h2{font-family:"Playfair Display",serif;font-size:44px;line-height:1.02;margin-bottom:10px;background:linear-gradient(90deg,#556b2f,#88c057);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .hero-left p{color:#2f6a47;margin-bottom:18px;font-size:16px}
+    .cta-row{display:flex;gap:12px;align-items:center}
+    .cta{padding:12px 18px;border-radius:12px;background:linear-gradient(90deg,#ffd34a,#baf7c3);font-weight:700;box-shadow:0 8px 24px rgba(99,226,141,0.12)}
+    .cta.secondary{background:transparent;border:2px solid rgba(22,58,46,0.08);font-weight:600}
+
+    .shine{display:inline-block;position:relative}
+    .shine:after{content:'';position:absolute;left:0;bottom:-6px;height:6px;width:100%;border-radius:6px;background:linear-gradient(90deg,#ffd34a,#baf7c3,#8ef2c2);opacity:.9;transform-origin:left;animation:underline 3.6s ease-in-out infinite}
+    @keyframes underline{0%{transform:scaleX(.2)}50%{transform:scaleX(1)}100%{transform:scaleX(.2)}}
+
+    .planner{background:linear-gradient(180deg,#f7e479cc,#f4f748);
+background-color: #eedf8e;
+      
+      padding:18px;border-radius:14px;box-shadow:0 10px 30px rgba(22,58,46,0.06)}
+    .planner h3{font-size:18px;margin-bottom:12px;color:#1b5a3b}
+    
+    .form-row{display:flex;gap:10px;margin-bottom:10px}
+    input[type=number],select{flex:1;padding:10px;border-radius:10px;border:1px solid #e6f6ec;font-weight:600}
+    .plan-btn{display:block;text-align:center;padding:10px;border-radius:10px;margin-top:6px;font-weight:700;cursor:pointer}
+
+
+   
+    .section{margin-top:38px}
+    .section h4{font-size:18px;margin-bottom:14px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:linear-gradient(180deg,#ffffff,#fbfff8);padding:16px;border-radius:12px;box-shadow:0 10px 20px rgba(20,50,36,0.05);transition:transform .36s ease,box-shadow .36s ease}
+    .card:hover{transform:translateY(-8px);box-shadow:0 20px 36px rgba(20,50,36,0.09)}
+    .card .thumb{height:150px;border-radius:10px;background:linear-gradient(135deg,#ffd34a,#baf7c3);display:flex;align-items:flex-end;padding:12px;color:#163a2e;font-weight:800}
+    .card h5{margin-top:12px;margin-bottom:6px;font-size:16px}
+    .meta{font-size:13px;color:#2f6a47}
+    .tags{margin-top:10px;display:flex;gap:8px}
+    .tag{font-size:12px;padding:6px 8px;border-radius:999px;background:rgba(26,100,63,0.08);color:#164a31;font-weight:700}
+
+  
+    footer{margin-top:48px;padding:28px;border-radius:12px;background:linear-gradient(180deg,#f9fff6,#ffffffcc);box-shadow:inset 0 1px 0 rgba(255,255,255,0.5)}
+    .foot-row{display:flex;justify-content:space-between;align-items:center}
+
+    
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr;}
+      .grid{grid-template-columns:repeat(2,1fr)}
+      .wrap{padding:18px}
+    }
+    @media (max-width:640px){
+      .grid{grid-template-columns:1fr}
+      .brand h1{font-size:16px}
+      .hero-left h2{font-size:30px}
+      nav ul{display:none}
+      .logo{width:54px;height:54px}
+    }
+
+    
+    .kicker{display:inline-block;padding:6px 10px;border-radius:999px;background:linear-gradient(90deg,#fff7cc,#eafff0);font-weight:700;margin-bottom:12px}
+
+    .cta.pulse{animation:pulse 2.8s infinite}
+    @keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.02)}100%{transform:scale(1)}}
+
+  </style>
+</head>
+<body>
+  <div class="bg-blob" aria-hidden="true">
+    <div class="blob b1"></div>
+    <div class="blob b2"></div>
+    <div class="blob b3"></div>
+  </div>
+
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">NW</div>
+        <div>
+          <h1>Nutra Way</h1>
+          <div class="slogan">Nutrition that works.</div>
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#recipes">Recipes</a></li>
+          <li><a href="Slaakash.html">Diet Planner</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a class="btn" href="formforproject.html">Get Started</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-left">
+          <div class="kicker">Healthy • Simple • Tasty</div>
+          <h2><span class="shine"></span>Delicious recipes & clean eating plans — made simple</h2>
+          <p>Nutra Way brings you curated, easy-to-make healthy recipes and a minimal diet planner to keep your nutrition on track. No fuss, just results.</p>
+
+          <div class="cta-row">
+            <a class="cta pulse" href="#recipes">Explore recipes</a>
+            <a class="cta secondary" href="Slaakash.html">Open planner</a>
+          </div>
+
+        </div>
+
+        <aside class="planner" id="planner">
+          <h3>Quick Diet Planner</h3>
+          <form>
+            <div class="form-row">
+              <input type="number" min="30" max="250" placeholder="Your age" aria-label="age">
+              <select aria-label="activity">
+                <option>Activity: Light</option>
+                <option>Activity: Moderate</option>
+                <option>Activity: Active</option>
+              </select>
+            </div>
+
+            <div class="form-row">
+              <input type="number" min="30" max="220" placeholder="Height (cm)" aria-label="height">
+              <input type="number" min="20" max="200" placeholder="Weight (kg)" aria-label="weight">
+            </div>
+
+            <div style="font-size:13px;color:#2f6a47;opacity:.95">Goal</div>
+            <div class="form-row" style="margin-top:6px">
+              <select><option>Maintain</option><option>Lose</option><option>Gain</option></select>
+              <button class="plan-btn" type="button">Get a simple plan</button>
+            </div>
+            <small style="display:block;margin-top:8px;color:#6b8b6a">(This planner is a starter — for personalized advice consult a nutritionist.)</small>
+          </form>
+        </aside>
+      </section>
+
+      <section class="section" id="recipes">
+        <h4>Featured recipes</h4>
+        <div class="grid">
+
+          <article class="card">
+  <div class="thumb" style="background-image:url('https://www.eatingwell.com/thmb/Sa1HbEk8VxUc6zbPQde5Kb1kIUg=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/7801027-a647b5d2aafd446e859e81d79014eba4.jpg'); background-size:cover; background-position:center;">
+    
+  </div>
+  <h5>Green Goddess Bowl</h5>
+  <a href="https://www.youtube.com/watch?v=rRECMW3MCMI">View recipe </a>
+  <div class="meta">30 min • Vegan • High protein</div>
+  <div class="tags"><span class="tag">Vegan</span><span class="tag">30 min</span></div>
+</article>
+
+<article class="card">
+  <div class="thumb" style="background-image:url('https://images.cookforyourlife.org/wp-content/uploads/2022/09/Citrus-Avocado-Salad.png'); background-size:cover; background-position:center;">
+    
+  </div>
+  <h5>Citrus Quinoa Salad</h5>
+  <a href="https://youtu.be/TPSs0GGSTYA">View recipe </a>
+  <div class="meta">20 min • Gluten-free • Fiber</div>
+  <div class="tags"><span class="tag">GF</span><span class="tag">No-cook</span></div>
+</article>
+
+<article class="card">
+  <div class="thumb" style="background-image:url('https://static01.nyt.com/images/2024/11/24/multimedia/Salmon-With-Lemon-Herb-Marinaderex-zcfp/Salmon-With-Lemon-Herb-Marinaderex-zcfp-videoSixteenByNineJumbo1600-v2.jpg'); background-size:cover; background-position:center;">
+    
+  </div>
+  <h5>Lemon Herb Salmon</h5>
+  <a href="https://youtu.be/3FHMINmch_4">View Recipe</a>
+  <div class="meta">25 min • Omega-3 • Light</div>
+  <div class="tags"><span class="tag">Fish</span><span class="tag">20–30 min</span></div>
+</article>
+
+        </div>
+      </section>
+
+      <section class="section" id="about">
+        <h4>Why Nutra Way?</h4>
+        <p style="max-width:760px;margin-top:10px;color:#2f6a47;line-height:1.6">We simplify healthy eating: easy recipes, clear portions and a lightweight planner that helps you stay consistent. Our design focuses on accessibility, quick actions and calm, friendly visuals so you feel confident about each meal.</p>
+      </section>
+
+    </main>
+
+    <footer>
+      <div class="foot-row">
+        <div>©️ <strong>Nutra Way</strong> — Nutrition that works.</div>
+        <div style="opacity:.9">Made with care • Eat well, feel well</div>
+      </div>
+    </footer>
+  </div>
+  <script>
+    const btn = document.querySelector('.plan-btn');
+    btn.addEventListener('click', () => {
+      const age = document.querySelector('input[aria-label="age"]').value;
+      const height = document.querySelector('input[aria-label="height"]').value;
+      const weight = document.querySelector('input[aria-label="weight"]').value;
+      const activity = document.querySelector('select[aria-label="activity"]').value;
+      const goal = document.querySelectorAll('select')[1].value;
+
+      if(!age || !height || !weight){
+        alert('Please fill all fields to get your plan');
+        return;
+      }
+
+   
+      let bmr = 10 * weight + 6.25 * height - 5 * age + 5;
+
+      let factor = 1.35;
+      if(activity.includes('Moderate')) factor = 1.55;
+      if(activity.includes('Active')) factor = 1.75;
+
+      let calories = Math.round(bmr * factor);
+
+      if(goal === 'Lose') calories -= 300;
+      if(goal === 'Gain') calories += 300;
+
+      alert(`Your simple daily plan:
+
+Calories: ${calories} kcal
+Protein: ${Math.round(weight * 1.6)}g
+Water: 2.5–3L
+
+Meals: 3 main + 2 snacks`);
+    });
+  </script>
+</body>
+</html>
